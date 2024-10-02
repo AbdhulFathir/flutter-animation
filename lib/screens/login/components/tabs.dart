@@ -4,9 +4,9 @@ import '../../../size_config.dart';
 
 class Tabs extends StatelessWidget {
   const Tabs({
-    Key? key,
+    super.key,
     required this.press,
-  }) : super(key: key);
+  });
 
   final ValueChanged<int> press;
 
@@ -26,11 +26,13 @@ class Tabs extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
           ),
           indicatorColor: Colors.white,
-          labelStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          indicatorSize: TabBarIndicatorSize.tab,
+          labelStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           labelColor: Colors.black,
           unselectedLabelColor: Colors.white,
+          dividerHeight: 0,
           onTap: press,
-          tabs: [Tab(text: "Morning Login"), Tab(text: "Night Login")],
+          tabs: const [Tab(text: "Morning Login"), Tab(text: "Night Login")],
         ),
       ),
     );
