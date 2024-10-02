@@ -52,7 +52,7 @@ class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
     List<Color> lightBgColors = [
-      Color(0xFF8C2480),
+       Color(0xFF8C2480),
       Color(0xFFCE587D),
       Color(0xFFFF9485),
       if (isFullSun) Color(0xFFFF9D80),
@@ -83,7 +83,7 @@ class _BodyState extends State<Body> {
             child: SafeArea(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: <Widget>[
                   const VerticalSpacing(of: 50),
                   Tabs(
                     press: (value) {
@@ -93,20 +93,21 @@ class _BodyState extends State<Body> {
                   const VerticalSpacing(),
                   Text(
                     "Good Morning",
-                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        fontWeight: FontWeight.bold, color: Colors.white),
                   ),
                   const VerticalSpacing(of: 10),
-                  Text(
+                  const Text(
                     "Enter your Informations below",
                     style: TextStyle(color: Colors.white),
                   ),
-                  VerticalSpacing(of: 50),
-                  RoundedTextField(
+                  const VerticalSpacing(of: 50),
+                  const RoundedTextField(
                     initialValue: "dudecoderr@gmail.com",
                     hintText: "Email",
                   ),
-                  VerticalSpacing(),
-                  RoundedTextField(
+                  const VerticalSpacing(),
+                  const RoundedTextField(
                     initialValue: "XXXXXXX",
                     hintText: "Password",
                   ),
