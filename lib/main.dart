@@ -1,9 +1,15 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_animation/screens/login/login_screen.dart';
+import 'package:flutter_animation/theme.dart';
+import 'Aplication/theme_service.dart';
+import 'screens/second_view/second_view.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+    create: (context) => ThemeService(),
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -12,14 +18,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: LoginScreen(),
-    );
+    return Consumer<ThemeService>(builder: (context, themeService, child) {
+      return MaterialApp(
+        themeMode: themeService.isDarkModeOn ? ThemeMode.dark : ThemeMode.light,
+        theme: AppTheme.lightTheme,
+        darkTheme: AppTheme.darkTheme,
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        home: const SecondView(),
+      );
+    });
   }
 }
