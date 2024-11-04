@@ -77,7 +77,16 @@ class _BodyState extends State<Body> {
       child: Stack(
         children: [
           Sun(duration: _duration, isFullSun: isFullSun),
-          const Land(),
+        Positioned(
+          bottom: getProportionateScreenWidth(-65),
+          left: 0,
+          right: 0,
+          child: Image.asset(
+            "assets/images/land_tree_light.png",
+            height: getProportionateScreenWidth(430),
+            fit: BoxFit.fitHeight,
+          ),
+        ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: SafeArea(

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animation/screens/login/login_screen.dart';
 import 'package:flutter_animation/theme.dart';
 import 'Aplication/theme_service.dart';
-import 'screens/second_view/second_view.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -15,7 +14,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return Consumer<ThemeService>(builder: (context, themeService, child) {
@@ -25,7 +23,7 @@ class MyApp extends StatelessWidget {
         darkTheme: AppTheme.darkTheme,
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
-        home: const SecondView(),
+        home:  LoginScreen(),
       );
     });
   }

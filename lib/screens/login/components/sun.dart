@@ -16,12 +16,15 @@ class Sun extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedPositioned(
-      duration: _duration,
-      curve: Curves.easeInOut,
-      left: getProportionateScreenWidth(30),
-      bottom: getProportionateScreenWidth(isFullSun ? -45 : -120),
-      child: SvgPicture.asset("assets/icons/Sun.svg", colorBlendMode:BlendMode.multiply,),
+    return
+      AnimatedPositioned(
+        duration: _duration,
+        curve: Curves.easeInOut,
+        left: getProportionateScreenWidth(30),
+        bottom: getProportionateScreenWidth(isFullSun ? -45 : -120),
+        child: SvgPicture.asset(
+          "assets/icons/Sun.svg",
+          colorBlendMode:BlendMode.multiply,),
     );
   }
 }
