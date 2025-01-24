@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animation/screens/flight_booking_page/flight_booking_page.dart';
+import 'package:flutter_animation/screens/flight_booking_page/s5.dart';
 import 'package:flutter_animation/screens/login/login_screen.dart';
 import 'package:flutter_animation/theme.dart';
 import 'Aplication/theme_service.dart';
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
         darkTheme: AppTheme.darkTheme,
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
-        home:  LoginScreen(),
+        home:  StretchableSliverAppBar(),
       );
     });
   }
